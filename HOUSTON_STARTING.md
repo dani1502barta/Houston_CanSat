@@ -47,7 +47,9 @@ This firmware runs on a second Teensy 4.1 that acts as a LoRa ground station. It
 
 1. Connect Teensy 4.1 to computer via USB cable
 2. Ensure RFM95W LoRa module is wired correctly (see [Hardware Requirements](#hardware-requirements))
-3. Connect LoRa antenna to RFM95W module
+3. **Connect LoRa antenna to RFM95W module**
+   - Ensure antenna is properly seated (screw-on or SMA connector)
+   - **⚠️ CRITICAL: Never power on LoRa module without antenna** - can damage the module
 4. Press Teensy program button if needed
 
 ### Step 3: Build and Upload Firmware
@@ -75,9 +77,29 @@ This firmware runs on a second Teensy 4.1 that acts as a LoRa ground station. It
    [INIT] Initializing LoRa...
    LoRa initialized
    LoRa ready and listening...
+   Freq: 868.30 MHz, SF: 8, BW: 250 kHz, CR: 4/6, Power: 14 dBm
+
+   Ground Station Ready!
+   Commands:
+     't' - Send TEL request
+     's' - Send SCI request
+     'b' - Send both (TEL + SCI)
+     'r' - Show last received packet
+     'h' - Show this help
    ```
 
-### Step 5: Send Commands
+### Step 5: Verify LoRa Parameters
+
+Check that displayed parameters match probe configuration:
+- **Frequency:** 868.30 MHz
+- **Spreading Factor:** 8
+- **Bandwidth:** 250 kHz
+- **Coding Rate:** 4/6
+- **TX Power:** 14 dBm
+
+**If parameters don't match:** Check `src/main.cpp` configuration constants.
+
+### Step 6: Send Commands
 
 Once the ground station is ready, type commands in the serial monitor:
 
@@ -114,8 +136,20 @@ The `TARGET_TEAM_ID` in `src/main.cpp` must match the `TEAM_ID` in the probe's `
 
 ## Documentation
 
-- **`docs/LORA_GROUND_STATION_SETUP.md`** - Complete setup and usage guide
 - **`src/main.cpp`** - Complete ground station source code
+
+## Pre-Flight Checklist
+
+Before testing with probe:
+
+- [ ] Ground station Teensy programmed and connected
+- [ ] Probe Teensy programmed and running
+- [ ] Both devices have LoRa antennas connected
+- [ ] Team ID matches on both devices
+- [ ] LoRa parameters match exactly (frequency, SF, BW, CR)
+- [ ] Serial monitors open on both devices (115200 baud)
+- [ ] Devices within 1-2 meters for initial testing
+- [ ] Probe is in READY state (or DESCENT/LANDED)
 
 ## Testing
 
