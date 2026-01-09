@@ -80,7 +80,6 @@ The `TARGET_TEAM_ID` in `src/main.cpp` must match the `TEAM_ID` in the probe's `
 
 ## Documentation
 
-- **`docs/GROUND_STATION_README.md`** - Quick reference guide
 - **`docs/LORA_GROUND_STATION_SETUP.md`** - Complete setup and usage guide
 - **`src/main.cpp`** - Complete ground station source code
 
