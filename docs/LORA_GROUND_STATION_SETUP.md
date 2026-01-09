@@ -97,7 +97,7 @@ This will be automatically installed when you build the project.
 
 ### Step 3: Copy Configuration
 
-Copy the `platformio.ini` and `src/main.cpp` files from the `ground_station/` directory in this repository (see `GROUND_STATION_CODE.md` for the complete code).
+Copy the `platformio.ini` and `src/main.cpp` files from the `HOUSTON_CANSAT` repository (see `HOUSTON_CANSAT/src/main.cpp` for the complete code).
 
 ---
 

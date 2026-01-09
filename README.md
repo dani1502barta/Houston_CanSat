@@ -82,7 +82,7 @@ The `TARGET_TEAM_ID` in `src/main.cpp` must match the `TEAM_ID` in the probe's `
 
 - **`docs/GROUND_STATION_README.md`** - Quick reference guide
 - **`docs/LORA_GROUND_STATION_SETUP.md`** - Detailed setup instructions
-- **`docs/GROUND_STATION_CODE.md`** - Original code documentation
+- **`src/main.cpp`** - Complete ground station source code
 
 ## Protocol
 
@@ -139,7 +139,6 @@ HOUSTON_CANSAT/
 ├── src/
 │   └── main.cpp            # Main ground station code
 ├── docs/
-│   ├── GROUND_STATION_CODE.md
 │   ├── GROUND_STATION_README.md
 │   └── LORA_GROUND_STATION_SETUP.md
 └── README.md               # This file

@@ -10,9 +10,10 @@ This is a quick reference guide for the LoRa Ground Station. For detailed setup 
    pio project init --board teensy41
    ```
 
-2. **Copy code from `GROUND_STATION_CODE.md`:**
-   - Copy `platformio.ini` → `platformio.ini`
-   - Copy `src/main.cpp` → `src/main.cpp`
+2. **Clone or copy from `HOUSTON_CANSAT` repository:**
+   - Copy `platformio.ini` from `HOUSTON_CANSAT/`
+   - Copy `src/main.cpp` from `HOUSTON_CANSAT/src/`
+   - Or clone the entire `HOUSTON_CANSAT` repository
 
 3. **Configure Team ID in `src/main.cpp`:**
    ```cpp
@@ -92,6 +93,6 @@ Before testing, verify:
 ## Files Reference
 
 - **`LORA_GROUND_STATION_SETUP.md`** - Complete setup guide with detailed instructions
-- **`GROUND_STATION_CODE.md`** - Complete source code for ground station
+- **`HOUSTON_CANSAT/src/main.cpp`** - Complete source code for ground station
 - **`COMPRESSED_CHECKLIST.md`** - Testing checklist that includes LoRa tests
 
