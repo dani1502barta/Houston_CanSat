@@ -31,27 +31,61 @@ This firmware runs on a second Teensy 4.1 that acts as a LoRa ground station. It
 
 ## Quick Start
 
-1. **Configure Team ID in `src/main.cpp`:**
-   ```cpp
-   #define TARGET_TEAM_ID 0x0  // Change to match your probe's Team ID
-   ```
+### Step 1: Configure Team ID
 
-2. **Build and upload:**
+1. Open `src/main.cpp` in this repository
+2. Find the line near the top (around line 20-30):
+   ```cpp
+   #define TARGET_TEAM_ID 0x0
+   ```
+3. Change `0x0` to your probe's Team ID (must be 0x0-0xF, e.g., `0x5` for Team 5)
+4. Save the file
+
+**Important:** This Team ID must match the `TEAM_ID` defined in your probe's `lib/include/config.h`.
+
+### Step 2: Connect Hardware
+
+1. Connect Teensy 4.1 to computer via USB cable
+2. Ensure RFM95W LoRa module is wired correctly (see [Hardware Requirements](#hardware-requirements))
+3. Connect LoRa antenna to RFM95W module
+4. Press Teensy program button if needed
+
+### Step 3: Build and Upload Firmware
+
+1. Open terminal/command prompt in this repository directory
+2. Run:
    ```bash
    pio run -t upload
    ```
+3. Wait for compilation and upload to complete
+4. If upload fails, press Teensy program button and try again
 
-3. **Open serial monitor:**
+### Step 4: Open Serial Monitor
+
+1. In the same terminal, run:
    ```bash
    pio device monitor --baud 115200
    ```
+2. You should see initialization messages:
+   ```
+   ======================================
+      LoRa Ground Station
+   ======================================
+   Team ID: 0x0
+   [INIT] Initializing LoRa...
+   LoRa initialized
+   LoRa ready and listening...
+   ```
 
-4. **Send commands:**
-   - Type `t` to send telemetry request
-   - Type `s` to send scientific request
-   - Type `b` to send both
-   - Type `r` to show last received telemetry
-   - Type `h` for help
+### Step 5: Send Commands
+
+Once the ground station is ready, type commands in the serial monitor:
+
+- **`t`** + Enter → Send telemetry request (TEL only)
+- **`s`** + Enter → Send scientific request (SCI only)
+- **`b`** + Enter → Send both requests (TEL + SCI)
+- **`r`** + Enter → Show last received telemetry
+- **`h`** + Enter → Show help menu
 
 ## Serial Commands
 
